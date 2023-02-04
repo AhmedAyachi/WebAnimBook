@@ -1,0 +1,22 @@
+.navigator{
+    position:absolute;
+    display:none;
+    top:0;
+    left:0;right:0;margin:0 auto;
+    padding:var(--spacing) 0;
+    background-color:rgba(0,0,0,0.5);
+    --spacing:5em;
+}
+.imageitem{
+    width:25em !important;
+    height:15em !important;
+    margin-right:var(--spacing);
+    border-radius:1.0667em;
+    background-size:cover !important;
+}
+.imageitem:first-of-type{
+    margin-left:var(--spacing);
+}
+.selected{
+    border:0.3em solid orangered;
+}

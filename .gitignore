@@ -1,0 +1,8 @@
+node_modules
+debug.log
+plugins
+platforms
+.vscode
+www/*.js
+hooks
+typings

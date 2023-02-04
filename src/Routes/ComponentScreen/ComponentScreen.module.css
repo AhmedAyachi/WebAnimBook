@@ -1,0 +1,15 @@
+.componentscreen{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:stretch;
+}
+.prisonerview{
+    align-self:center;
+}
+.imageviewer{
+    flex:1;
+}
+.colorpicker{
+    flex:1;
+}

@@ -1,0 +1,24 @@
+.imageview{
+    width:100%;
+    height:100%;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    vertical-align:middle;
+    touch-action:pan-x !important;
+    overflow:hidden;
+}
+.imageview>img{
+    object-fit:contain;
+}
+
+@media(orientation:landscape){
+    .imageview>img{
+        height:100%;
+    }
+}
+@media(orientation:portrait){
+    .imageview>img{
+        width:100%;
+    }
+}

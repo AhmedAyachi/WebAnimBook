@@ -1,0 +1,68 @@
+:root{
+    font-size:1vw;
+    --mainFont:Arial;
+    --mainColor:black;
+    --backgroundColor:white;
+}
+*{
+    margin:0;
+    padding:0;
+    outline:none transparent !important;
+    user-select:none;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+}
+input:read-write,textarea:read-write,div[contenteditable]{
+    user-select:text;
+    -moz-user-select:text;
+    -webkit-user-select:text;
+    -ms-user-select:text;
+}
+div::-webkit-scrollbar{
+    display:none;
+}
+body{
+    overflow:hidden;
+}
+#webview{
+    max-width:100vw;
+    height:100vh;max-height:100vh;
+    font-family:var(--mainFont);
+    font-size:1rem;
+    overflow:hidden;
+}
+button,.button{
+    font-size:1em;
+    border:none;
+    transition:200ms;
+}
+
+
+@media(min-width:15cm){
+    :root{
+        font-size:0.33vw;
+    }
+}
+
+@media(hover:none){
+    button:active,.button:active{
+        filter:brightness(0.65);
+        opacity:0.85;
+    }
+}
+
+@media(any-hover){
+    button:hover,.button:hover{
+        filter:brightness(0.65);
+        opacity:0.85;
+    }
+}
+
+@supports(-webkit-touch-callout:none){
+    /* CSS specific to iOS devices */
+}
+  
+@supports not(-webkit-touch-callout:none){
+    /* CSS for other than iOS devices */
+}

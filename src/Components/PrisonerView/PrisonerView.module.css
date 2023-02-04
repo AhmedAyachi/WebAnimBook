@@ -1,0 +1,18 @@
+.prisonerview{
+    max-width:100%;
+}
+.prison{
+    width:85em;
+    height:85em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    border:0.35em solid black;
+}
+.prisoner{
+    width:8em;
+    height:8em;
+    border-radius:50%;
+    background-color:black;
+}
