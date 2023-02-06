@@ -1,6 +1,7 @@
 import {useId} from "cherries";
 import ScreenView from "../ScreenView/ScreenView";
 import css from "./HomeScreen.module.css";
+import {ModelExplorer} from "components";
 
 
 export default function HomeScreen(props){
@@ -9,6 +10,7 @@ export default function HomeScreen(props){
 
     homescreen.beforeEndHTML=`
     `;
+    ModelExplorer({parent:homescreen});
 
     return homescreen;
 }

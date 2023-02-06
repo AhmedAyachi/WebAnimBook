@@ -9,7 +9,7 @@ function onDeviceReady(){
         language.$name=langname;
         window.language=Object.freeze(language);
     });
-    setCssVars();
+    
     if(cordova.platformId==="ios"){
         window.addEventListener("touchstart",()=>{
             const {activeElement}=document;
@@ -23,7 +23,7 @@ function onDeviceReady(){
 
 document.addEventListener("deviceready",onDeviceReady,false);
 
-const setCssVars=()=>{
+!function setCssVars(){
     const style=getComputedStyle(document.documentElement);
     Object.defineProperty(window,"rem",{
         value:parseFloat(style.getPropertyValue("font-size")),
@@ -33,4 +33,4 @@ const setCssVars=()=>{
             value:style.getPropertyValue(`--${name}`),
         });
     });
-}
+}();

@@ -26,7 +26,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "buffer": "^6.0.3",
     "cherries": "github:AhmedAyachi/Cherries"
   },
   "cordova": {
@@ -35,8 +34,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-clipboard": {},
       "cordova-plugin-appminimize": {},
-      "cordova-plugin-webview": {},
-      "cordova-plugin-add-swift-support": {}
+      "cordova-plugin-add-swift-support": {},
+      "cordova-plugin-webview": {}
     },
     "platforms": [
       "browser"

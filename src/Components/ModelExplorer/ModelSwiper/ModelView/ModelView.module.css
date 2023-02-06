@@ -1,0 +1,10 @@
+.modelview{
+    position:absolute;
+    width:fit-content;
+    height:fit-content;
+    font-size:1em;
+}
+.photo{
+    width:80em;
+    height:100em;
+}
