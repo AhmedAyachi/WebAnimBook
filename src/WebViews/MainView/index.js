@@ -1,11 +1,11 @@
 import "../index";
 import MainView from "./MainView";
-import {makeStatusBarTranslucent} from "resources";
+import {makeStatusBarUnderlaid} from "resources";
 import {store} from "../../Store";
 
 
 function onDeviceReady(){
-    makeStatusBarTranslucent();
+    makeStatusBarUnderlaid();
     WebView.initiateStore(store,()=>{
         MainView({
             parent:document.body,
