@@ -49,7 +49,7 @@ const options={
     resolve:{
         alias:{
             "assets":path.resolve(__dirname,"src/Assets/index.js"),
-            "routes":path.resolve(__dirname,"src/Routes/index.js"),
+            "screens":path.resolve(__dirname,"src/Screens/index.js"),
             "actions":path.resolve(__dirname,"src/Store/Actions/index.js"),
             "resources":path.resolve(__dirname,"src/Resources/index.js"),
             "components":path.resolve(__dirname,"src/Components/index.js"),

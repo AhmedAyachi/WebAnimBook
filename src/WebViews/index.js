@@ -23,12 +23,15 @@ function onDeviceReady(){
 
 document.addEventListener("deviceready",onDeviceReady,false);
 
-!function setCssVars(){
+!function globalizeCssVars(){
     const style=getComputedStyle(document.documentElement);
     Object.defineProperty(window,"rem",{
         value:parseFloat(style.getPropertyValue("font-size")),
     });
-    ["mainFont","minorFont","mainColor","minorColor","backgroundColor"].forEach(name=>{
+    [
+        "mainFont","majorFont","minorFont",
+        "mainColor","majorColor","minorColor","backgroundColor",
+    ].forEach(name=>{
         Object.defineProperty(window,name,{
             value:style.getPropertyValue(`--${name}`),
         });

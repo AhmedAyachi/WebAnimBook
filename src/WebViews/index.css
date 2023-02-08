@@ -1,7 +1,11 @@
 :root{
     font-size:1vw;
-    --mainFont:Arial;
+    --mainFont:arial;
+    --majorFont:arial;
+    --minorFont:arial;
     --mainColor:black;
+    --majorColor:black;
+    --minorColor:black;
     --backgroundColor:white;
 }
 *{

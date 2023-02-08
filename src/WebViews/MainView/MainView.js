@@ -1,6 +1,6 @@
 import {View,DrawerNavigator} from "cherries";
 import css from "./MainView.module.css";
-import {ComponentScreen,AboutScreen,HomeScreen} from "routes";
+import {ComponentScreen,AboutScreen,HomeScreen} from "screens";
 import * as components from "components";
 
 
