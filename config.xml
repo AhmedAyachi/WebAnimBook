@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-    id="com.appname.app" android-packageName="com.appname.app" version="1.0.0" 
+    id="com.webanimbook.app" android-packageName="com.webanimbook.app" version="1.0.0" 
     xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:gap="http://phonegap.com/ns/1.0"
 >
-    <name>AppName</name>
+    <name>WebAnimBook</name>
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
     <description>Cordova app template</description>
     <author email="aayachi032@gmail.com">Ahmed Ayachi</author>

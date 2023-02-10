@@ -22,8 +22,8 @@ export default function StateView(props){
     return stateview;
 }
 
-const statics=StateView.statics={
-    duration:300,
+const statics={
+    duration:150,
 },styles={
     container:(accepted)=>`
         background-color:${accepted?"#21865a":"#fb004c"};

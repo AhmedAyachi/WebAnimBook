@@ -4,22 +4,29 @@ import ModelView from "./ModelView/ModelView";
 
 
 export default function ModelSwiper(props){
-    const {parent,id=useId("modelswiper"),models}=props;
+    const {parent,id=useId("modelswiper"),models,onChange,onFocus}=props;
     const modelswiper=View({parent,id,className:css.modelswiper});
 
     modelswiper.innateHTML=`
     `;
 
     models&&models.forEach((model,i)=>{
-        ModelView({parent:modelswiper,style:styles.modelview(i,models.length),model});
+        const itolast=models.length-(i+1);
+        ModelView({
+            parent:modelswiper,model,
+            style:styles.modelview(itolast),
+            onDealt:onChange&&(()=>{
+                onChange(models[i+1]);
+            }),onFocus,
+        });
     });
 
     return modelswiper;
 }
 
 const styles={
-    modelview:(index,modelcount)=>`
-        left:${modelcount-index}em;
-        z-index:${modelcount-index};
+    modelview:(itolast)=>`
+        left:${itolast*3}em;
+        z-index:${itolast};
     `,
 }

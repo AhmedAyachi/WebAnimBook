@@ -1,6 +1,11 @@
 
 
 @font-face {
+    font-family:"robotoslab";
+    src:url("./PTSerif-Regular.ttf");
+}
+
+@font-face {
     font-family:"pottaone";
     src:url("./PottaOne-Regular.ttf");
 }

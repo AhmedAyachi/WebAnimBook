@@ -13,6 +13,7 @@ export {default as img9} from "./Images/Img_9.png";
 export {default as img10} from "./Images/Img_10.jpg";
 
 //Svgs:
+export {default as questionmark0} from "./Svgs/QuestionMark_0";
 export {default as check0} from "./Svgs/Check_0";
 export {default as cross0} from "./Svgs/Cross_0";
 export {default as list0} from "./Svgs/List_0";

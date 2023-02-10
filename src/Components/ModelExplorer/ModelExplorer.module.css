@@ -1,8 +1,10 @@
 .modelexplorer{
+    position:relative;
     max-width:100%;
     flex:1;
-    padding:9em;
+    padding:5em;
     background-color:#1f1a2e;
+    overflow:hidden;
 }
 .header{
     position:relative;
@@ -11,17 +13,19 @@
     justify-content:center;
     align-items:center;
     opacity:0.85;
+    z-index:10;
 }
 .icon{
     position:absolute;
     width:10em;
     left:0;
     top:0;bottom:0;margin:auto 0;
+    opacity:0.75;
 }
 .title{
     height:1em;
     font-family:pottaone;
-    font-size:10em;
+    font-size:11em;
     font-weight:400;
     text-transform:uppercase;
     color:white;

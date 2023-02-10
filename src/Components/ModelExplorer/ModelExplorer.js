@@ -1,7 +1,8 @@
-import {useId,View} from "cherries";
+import {useId,View,fadeOut, fadeIn} from "cherries";
 import css from "./ModelExplorer.module.css";
-import {model0,model1,model2,list0} from "assets";
 import ModelSwiper from "./ModelSwiper/ModelSwiper";
+import ModelElector from "./ModelElector/ModelElector";
+import {model0,model1,model2,list0} from "assets";
 
 
 export default function ModelExplorer(props){
@@ -14,17 +15,26 @@ export default function ModelExplorer(props){
             <span class="${css.title}">zick</span>
         </div>
     `;
-    ModelSwiper({parent:modelexplorer,models:statics.models});
-
+    ModelSwiper({
+        parent:modelexplorer,
+        models:statics.models,
+        onChange:(model)=>{
+            fadeOut(modelelctor,model&&(()=>{
+                modelelctor=modelelctor.substitute(ModelElector({parent:modelexplorer,model}));
+                fadeIn(modelelctor);
+            }));
+        },
+    });
+    let modelelctor=ModelElector({parent:modelexplorer,model:statics.models[0]});
     return modelexplorer;
 }
 
 const statics={
     models:[
         {
-            name:"mabel barry",
+            name:"mabel berry",
             age:28,
-            description:"if you can pull me away from my philosophy books and scientific theories, i'm pretty low-key date",
+            description:"if you can pull me away from my philosophy books and scientific theories, I'm a pretty low-key date",
             photo:model0,
         },
         {

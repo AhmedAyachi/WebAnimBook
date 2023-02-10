@@ -1,0 +1,40 @@
+.choiceview{
+    position:relative;
+    width:fit-content;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    margin-top:3.1em;
+}
+.choiceview:first-of-type{
+    margin-top:0;
+}
+.container{
+    width:15em;
+    height:15em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:1em;
+    background-color:#392a41;
+}
+.label{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:3em;
+    writing-mode:vertical-rl;
+    text-transform:uppercase;
+    color:#575266;
+    margin-left:1em;
+    transform:rotateZ(180deg);
+}
+.wrapper{
+    width:6.78em;
+    height:6.78em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:inherit;
+}
+.icon{
+    width:3.5em;
+}

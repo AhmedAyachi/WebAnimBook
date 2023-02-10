@@ -24,10 +24,11 @@ function onDeviceReady(){
 document.addEventListener("deviceready",onDeviceReady,false);
 
 !function globalizeCssVars(){
-    const style=getComputedStyle(document.documentElement);
+    const {innerWidth}=window;
     Object.defineProperty(window,"rem",{
-        value:parseFloat(style.getPropertyValue("font-size")),
+        value:innerWidth/(innerWidth>567?300:100),
     });
+    const style=getComputedStyle(document.documentElement);
     [
         "mainFont","majorFont","minorFont",
         "mainColor","majorColor","minorColor","backgroundColor",

@@ -11,10 +11,10 @@ export const makeStatusBarTranslucent=(styleId)=>{
     }
 }
 
-export const makeStatusBarUnderlaid=(color,styleId)=>{
+export const makeStatusBarUnderlaid=(color="white",styleId)=>{
     if(cordova.platformId!=="browser"){
         StatusBar.overlaysWebView(false);
-        StatusBar.backgroundColorByHexString(color||backgroundColor);
+        StatusBar[color.startsWith("#")?"backgroundColorByHexString":"backgroundColorByName"](color);
         StatusBar[styleId?"styleLightContent":"styleDefault"]();
         StatusBar.show();
     }

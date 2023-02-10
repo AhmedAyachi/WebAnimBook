@@ -1,0 +1,37 @@
+.modelelector{
+    position:relative;
+    max-width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-top:8em;
+    z-index:5;
+}
+.details{
+    flex:1;
+    margin-top:6em;
+}
+.choices{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    margin-left:5em;
+}
+.title{
+    font-family:robotoslab;
+    font-weight:700;
+    font-size:8em;
+    text-transform:capitalize;
+    color:white;
+}
+.description{
+    font-family:arial;
+    font-size:4em;
+    line-height:1.5em;
+    margin-top:1em;
+    color:rgba(255,255,255,0.5);
+}
+.description::first-letter{
+    text-transform:uppercase;
+}

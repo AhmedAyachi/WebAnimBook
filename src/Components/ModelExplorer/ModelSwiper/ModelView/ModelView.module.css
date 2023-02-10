@@ -1,10 +1,39 @@
 .modelview{
     position:absolute;
-    width:fit-content;
-    height:fit-content;
-    font-size:1em;
+    width:80em;
+    height:inherit;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    top:22em;
+    left:0;right:0;margin:0 auto;
 }
 .photo{
-    width:80em;
-    height:100em;
+    width:100%;
+    height:100%;
+    object-fit:fill;
 }
+
+@keyframes fullview {
+    from{
+        width:80em;
+        height:inherit;
+        top:22em;
+    }
+    to{
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+    }
+}
+@keyframes nofull {
+    
+}
+/* .focused{
+    position:absolute !important;
+    width:100%;
+    height:100%;
+    left:0 !important;
+    transition:500ms;
+} */
