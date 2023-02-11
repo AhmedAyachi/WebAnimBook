@@ -46,7 +46,7 @@ export default function ModelElector(props){
         else{
             while(moreEls.length){
                 const element=moreEls.pop();
-                fadeOut(element,statics.fadeDuration,()=>{element.remove()});
+                fadeOut(element,100,()=>{element.remove()});
             }
             titleEl.style.translate=null;
             detailsEl.style.translate=null;
