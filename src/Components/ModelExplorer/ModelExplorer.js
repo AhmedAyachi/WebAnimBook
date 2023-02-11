@@ -24,6 +24,8 @@ export default function ModelExplorer(props){
                 fadeIn(modelelctor);
             }));
         },
+        onFocus:()=>{modelelctor.toggleMore(true)},
+        onBlur:()=>{modelelctor.toggleMore(false)},
     });
     let modelelctor=ModelElector({parent:modelexplorer,model:statics.models[0]});
     return modelexplorer;
@@ -36,18 +38,21 @@ const statics={
             age:28,
             description:"if you can pull me away from my philosophy books and scientific theories, I'm a pretty low-key date",
             photo:model0,
+            kmaway:3,
         },
         {
             name:"jessica brown",
             age:26,
             description:"award-winning designer raised in australia, livin in New York",
             photo:model1,
+            kmaway:1.8,
         },
         {
             name:"ella myers",
             age:24,
             description:"perfectionistic, quirky and everybody's friend. Extroverted introvert with diverse range of interests",
             photo:model2,
+            kmaway:0.4,
         },
     ],
 }

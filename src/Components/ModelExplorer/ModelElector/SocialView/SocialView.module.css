@@ -1,0 +1,16 @@
+.socialview{
+    position:absolute;
+    max-width:100%;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    left:0;
+    bottom:-8em;
+}
+.icon{
+    width:5em;
+    margin-left:15em;
+}
+.icon:first-of-type{
+    margin-left:0;
+}

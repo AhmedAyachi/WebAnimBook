@@ -4,7 +4,7 @@ import ModelView from "./ModelView/ModelView";
 
 
 export default function ModelSwiper(props){
-    const {parent,id=useId("modelswiper"),models,onChange,onFocus}=props;
+    const {parent,id=useId("modelswiper"),models,onChange,onFocus,onBlur}=props;
     const modelswiper=View({parent,id,className:css.modelswiper});
 
     modelswiper.innateHTML=`
@@ -15,9 +15,9 @@ export default function ModelSwiper(props){
         ModelView({
             parent:modelswiper,model,
             style:styles.modelview(itolast),
-            onDealt:onChange&&(()=>{
-                onChange(models[i+1]);
-            }),onFocus,
+            onDealt:onChange&&(()=>{onChange(models[i+1])}),
+            onFocus:onFocus&&(()=>{onFocus(model)}),
+            onBlur:onBlur&&(()=>{onBlur(model)}),
         });
     });
 

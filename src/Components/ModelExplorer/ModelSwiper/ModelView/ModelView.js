@@ -4,7 +4,7 @@ import StateView from "./StateView/StateView";
 
 
 export default function ModelView(props){
-    const {parent,id=useId("modelview"),style,model,onDealt}=props;
+    const {parent,id=useId("modelview"),style,model,onDealt,onFocus,onBlur}=props;
     const modelview=DraggableView({
         parent,id,
         style:styles.modelview(model.photo)+";"+(style||""),
@@ -45,6 +45,7 @@ export default function ModelView(props){
                         animation:null,
                     });
                 },statics.focusduration+50);
+                onFocus&&onFocus();
             }
             else if(focused&&(event.direction==="bottom")){
                 state.focused=false;
@@ -61,6 +62,7 @@ export default function ModelView(props){
                     modelview.setEventListener("move",onMove);
                     modelview.setEventListener("drop",onDrop)
                 },statics.focusduration+50);
+                onBlur&&onBlur();
             }
         }},
     });
