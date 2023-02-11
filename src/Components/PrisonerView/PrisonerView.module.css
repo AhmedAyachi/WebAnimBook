@@ -8,11 +8,11 @@
     justify-content:center;
     align-items:center;
     border-radius:50%;
-    border:0.35em solid black;
+    border:0.35em solid var(--mainColor);
 }
 .prisoner{
     width:8em;
     height:8em;
     border-radius:50%;
-    background-color:black;
+    background-color:var(--mainColor);
 }

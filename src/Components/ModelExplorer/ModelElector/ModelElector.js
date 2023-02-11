@@ -59,8 +59,8 @@ export default function ModelElector(props){
 const statics={
     fadeDuration:500,
     choices:[
-        {label:"nope",color:"#d979c3",icon:cross0},
-        {label:"maybe",color:"#4599d7",icon:questionmark0},
-        {label:"yes",color:"#208758",icon:check0},
+        {label:"nope",color:majorColor,icon:cross0},
+        {label:"maybe",color:mainColor,icon:questionmark0},
+        {label:"yes",color:minorColor,icon:check0},
     ],
 }

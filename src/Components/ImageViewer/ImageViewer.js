@@ -2,11 +2,11 @@ import {useId,FlatList,useSwipeGesture,fadeIn} from "cherries";
 import css from "./ImageViewer.module.css";
 import ImageView from "./ImageView/ImageView";
 import Navigator from "./Navigator/Navigator";
-import {img0,img10,img2,img3,img6,img7,img8,img9} from "assets";
+import {model0,model1,model2} from "assets";
 
 
 export default function ImageViewer(props){
-    const {parent,id=useId("imageviewer"),position,style,images=[img0,img10,img2,img3,img6,img7,img8,img9]}=props;
+    const {parent,id=useId("imageviewer"),position,style,images=[model2,model1,model0]}=props;
     const imageviewer=FlatList({
         parent,id,position,style,
         className:`${css.imageviewer} ${props.className||""}`,

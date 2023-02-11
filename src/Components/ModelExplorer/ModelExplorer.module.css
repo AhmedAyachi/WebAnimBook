@@ -3,7 +3,7 @@
     max-width:100%;
     flex:1;
     padding:5em;
-    background-color:#1f1a2e;
+    background-color:var(--backgroundColor);
     overflow:hidden;
 }
 .header{
