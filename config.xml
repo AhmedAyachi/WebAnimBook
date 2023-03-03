@@ -14,8 +14,8 @@
     <preference name="android-minSdkVersion" value="26"/>
     <!-- <preference name="android-targetSdkVersion" value=""/> -->
     <!-- <preference name="android-maxSdkVersion" value=""/> -->
-    <preference name="BackgroundColor" value="#ffffff"/>
-    <!-- <icon src=""/> -->
+    <preference name="BackgroundColor" value="#1f1a2e"/>
+    <icon src="src/Assets/Icon/Icon.png"/>
     <platform name="android">
         <edit-config 
             file="app/src/main/AndroidManifest.xml"

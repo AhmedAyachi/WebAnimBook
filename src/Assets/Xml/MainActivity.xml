@@ -3,10 +3,6 @@
     <style name="MainActivity" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowAnimationStyle">@style/MainActivtiyAnimation</item>
         <item name="android:windowBackground">@drawable/launchscreen</item>
-    </style>
-    <style name="MainActivtiyAnimation"> 
-        <item name="android:activityCloseExitAnimation">@animator/fade_out</item>
     </style>
 </resources>

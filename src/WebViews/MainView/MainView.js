@@ -13,7 +13,10 @@ export default function MainView(props){
 
     DrawerNavigator({
         parent:mainview,
+        headerClassName:css.header,
         containerClassName:css.container,
+        tintColor:majorColor,
+        initialId:"home",
         routes:[
             {id:"home",component:HomeScreen},
             ...Object.keys(components).map(key=>({

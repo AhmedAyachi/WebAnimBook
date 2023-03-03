@@ -21,7 +21,7 @@
     margin-left:5em;
 }
 .title{
-    font-family:robotoslab;
+    font-family:var(--mainFont);
     font-weight:700;
     font-size:8em;
     text-transform:capitalize;

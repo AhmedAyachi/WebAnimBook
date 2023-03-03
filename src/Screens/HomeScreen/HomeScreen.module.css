@@ -1,6 +1,37 @@
 .homescreen{
     display:flex;
     flex-direction:column;
-    justify-content:flex-start;
+    justify-content:space-between;
     align-items:stretch;
+    padding:0 var(--padding);
+    --padding:5em;
+}
+.homescreen p{
+    color:white;
+}
+.row0{
+    max-width:100%;
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.row1{
+    max-width:100;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding-bottom:var(--padding);
+}
+.row1>p{
+    font-size:3em;
+}
+.message{
+    font-size:5.333em;
+    text-align:center;
+}
+.name{
+    font-family:parisienne;
+    font-size:2em;
+    color:white;
 }

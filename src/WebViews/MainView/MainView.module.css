@@ -6,6 +6,9 @@
 .mainview>p{
     font-size:3em;
 }
+.header{
+    background-color:white;
+}
 .container{
     background-color:var(--backgroundColor);
 }

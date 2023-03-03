@@ -24,7 +24,7 @@
 }
 .title{
     height:1em;
-    font-family:pottaone;
+    font-family:var(--majorFont);
     font-size:11em;
     font-weight:400;
     text-transform:uppercase;

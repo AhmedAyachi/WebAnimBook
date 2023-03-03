@@ -9,6 +9,15 @@ export default function HomeScreen(props){
     const homescreen=ScreenView({parent,id,className:css.homescreen});
 
     homescreen.beforeEndHTML=`
+        <div class="${css.row0}">
+            <p class="${css.message}">
+                This is an animation book for web.
+                Use the drawer navigator above to navigate between animations
+            </p>
+        </div>
+        <div class="${css.row1}">
+            <p><span class="${css.name}">Ahmed Ayachi</span></p>
+        </div>
     `;
 
     return homescreen;
