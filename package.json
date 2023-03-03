@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --config webpack.config.js --watch",
     "server": "phonegap serve --livereload & npm run server",
-    "build": "webpack --config webpack.config.js --mode='production'"
+    "build": "webpack --config webpack.config.js --mode=production"
   },
   "author": "Ahmed Ayachi",
   "license": "ISC",
