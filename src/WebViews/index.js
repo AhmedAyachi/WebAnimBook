@@ -32,6 +32,7 @@ document.addEventListener("deviceready",onDeviceReady,false);
     [
         "mainFont","majorFont","minorFont",
         "mainColor","majorColor","minorColor","backgroundColor",
+        "textColor",
     ].forEach(name=>{
         Object.defineProperty(window,name,{
             value:style.getPropertyValue(`--${name}`),

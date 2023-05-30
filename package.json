@@ -1,17 +1,17 @@
 {
-  "name": "webanimbook",
+  "name": "appname",
   "version": "1.0.0",
-  "description": "Web animations book",
-  "main": "index.js",
+  "description": "cordova app template",
   "scripts": {
-    "start": "webpack --config webpack.config.js --watch",
-    "server": "phonegap serve --livereload & npm run server",
-    "build": "webpack --config webpack.config.js --mode=production"
+    "start": "webpack --config webpack.config.js --watch --env env=dev",
+    "test": "webpack --config webpack.config.js --watch --env env=test",
+    "build": "webpack --config webpack.config.js --env env=prod",
+    "server": "phonegap serve"
   },
   "author": "Ahmed Ayachi",
   "license": "ISC",
   "devDependencies": {
-    "cordova-android": "^10.1.2",
+    "copy-webpack-plugin": "^11.0.0",
     "cordova-browser": "^7.0.0",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-appminimize": "^1.0.1",
@@ -20,11 +20,15 @@
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-plugin-webview": "github:AhmedAyachi/cordova-plugin-webview",
     "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.1",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.5",
     "url-loader": "^4.1.1",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "cherries": "github:AhmedAyachi/Cherries"
   },
   "cordova": {
     "plugins": {
@@ -32,15 +36,11 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-clipboard": {},
       "cordova-plugin-appminimize": {},
-      "cordova-plugin-add-swift-support": {},
-      "cordova-plugin-webview": {}
+      "cordova-plugin-webview": {},
+      "cordova-plugin-add-swift-support": {}
     },
     "platforms": [
-      "android",
       "browser"
     ]
-  },
-  "dependencies": {
-    "cherries": "github:AhmedAyachi/Cherries"
   }
 }

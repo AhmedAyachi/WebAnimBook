@@ -1,0 +1,21 @@
+.quizview{
+    max-width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+    padding:0 5em;
+    background:linear-gradient(to bottom right,var(--minorColor), var(--mainColor) 90%);
+    --mainColor:#039475;
+    --majorColor:#2adbc7;
+    --minorColor:#000606;
+}
+.questionlist{
+    flex:1;
+}
+.footer{
+    max-width:100%;
+    font-size:1em;
+    padding-bottom:20em;
+}

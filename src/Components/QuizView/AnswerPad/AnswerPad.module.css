@@ -1,0 +1,35 @@
+.answerpad{
+    max-width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:2em;
+    border:var(--borderWidth) solid var(--textColor);
+    --borderWidth:0.6em;
+}
+.answerbtn{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:5em;
+    background-color:transparent;
+    /* background:linear-gradient(to bottom,transparent,#039475 90%); */
+}
+.answerbtn:nth-of-type(2n){
+    border-left:calc(var(--borderWidth) / 2) solid var(--textColor);
+}
+.answerbtn:nth-of-type(2n+1){
+    border-right:calc(var(--borderWidth) / 2) solid var(--textColor);
+}
+.answerbtn>img{
+    width:4em;
+    margin-right:2em;
+}
+.answerbtn>label{
+    font-family:var(--majorFont);
+    font-weight:400;
+    font-size:4em;
+    text-transform:uppercase;
+    color:var(--textColor);
+}

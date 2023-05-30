@@ -3,6 +3,6 @@ debug.log
 plugins
 platforms
 .vscode
-www/*.js
+www
 hooks
 typings
