@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "cordova-android": "^10.1.2",
-    "cordova-browser": "^6.0.0",
+    "cordova-browser": "^7.0.0",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-appminimize": "^1.0.1",
     "cordova-plugin-clipboard": "^1.0.0",
@@ -36,8 +36,8 @@
       "cordova-plugin-webview": {}
     },
     "platforms": [
-      "browser",
-      "android"
+      "android",
+      "browser"
     ]
   },
   "dependencies": {

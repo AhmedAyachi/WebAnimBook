@@ -11,7 +11,7 @@ export default function PrisonerView(props){
     `;
     const prisonEl=prisonerview.querySelector(`.${css.prison}`);
     const radius=prisonEl.clientWidth/2;
-    DraggableView({
+    const draggableview=DraggableView({
         parent:prisonEl,
         className:css.prisoner,
         onDrop:(coords,element)=>{
@@ -22,6 +22,10 @@ export default function PrisonerView(props){
             }
         },
     });
+
+    setTimeout(()=>{
+        draggableview.setPosition({x:100,y:100});
+    },2000);
     
 
     return prisonerview;
