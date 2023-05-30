@@ -15,6 +15,7 @@
 @media(orientation:landscape){
     .imageview>img{
         height:100%;
+        aspect-ratio:10/1;
     }
 }
 @media(orientation:portrait){

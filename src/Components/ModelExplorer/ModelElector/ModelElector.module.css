@@ -24,6 +24,7 @@
     font-family:var(--mainFont);
     font-weight:700;
     font-size:8em;
+    white-space:nowrap;
     text-transform:capitalize;
     color:white;
     transition:var(--transition);
