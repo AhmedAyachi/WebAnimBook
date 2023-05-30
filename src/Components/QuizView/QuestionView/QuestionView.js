@@ -25,21 +25,26 @@ export default function QuestionView(props){
     `;
 
     const keywordEls=[...questionview.querySelectorAll(`.${css.word}[key]`)];
-    groupBy(keywordEls,(keywordEl)=>keywordEl.offsetTop).forEach((line,i)=>{
-        const {items}=line,{length}=items;
-        items.forEach((keywordEl,j)=>{
-            [j===0,(j+1)===length].forEach((bool,k)=>{
-                if(bool){
-                    const side=k?"Right":"Left";
-                    Object.assign(keywordEl.style,{
-                        [`borderTop${side}Radius`]:"0.15em",
-                        [`borderBottom${side}Radius`]:"0.15em",
-                    });
-                }
-            });
-            fadeIn(keywordEl,statics.transDuration*2);
-        });
+    keywordEls.forEach(keywordEl=>{
+        fadeIn(keywordEl,statics.transDuration*2);
     });
+    setTimeout(()=>{
+        groupBy(keywordEls,(keywordEl)=>keywordEl.offsetTop).forEach(line=>{
+            const {items}=line,{length}=items;
+            items.forEach((keywordEl,i)=>{
+                [i===0,(i+1)===length].forEach((bool,j)=>{
+                    if(bool){
+                        const side=j?"Right":"Left";
+                        Object.assign(keywordEl.style,{
+                            [`borderTop${side}Radius`]:"0.15em",
+                            [`borderBottom${side}Radius`]:"0.15em",
+                        });
+                    }
+                });
+                
+            });
+        });
+    },100);
     const letterEls=questionview.querySelectorAll(`.${css.word}>span`);
     letterEls.forEach(letterEl=>{
         setTimeout(()=>{
