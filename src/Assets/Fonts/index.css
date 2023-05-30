@@ -1,6 +1,5 @@
 
 
-
 @font-face {
     font-family:"cutivemono";
     src:url("./CutiveMono-Regular.ttf");
@@ -9,4 +8,9 @@
 @font-face {
     font-family:"pottaone";
     src:url("./PottaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family:"parisienne";
+    src:url("./Parisienne-Regular.ttf");
 }

@@ -44,7 +44,7 @@ export default function QuestionView(props){
                 
             });
         });
-    },100);
+    },statics.transDuration/2);
     const letterEls=questionview.querySelectorAll(`.${css.word}>span`);
     letterEls.forEach(letterEl=>{
         setTimeout(()=>{

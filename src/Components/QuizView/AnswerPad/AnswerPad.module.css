@@ -14,7 +14,6 @@
     align-items:center;
     padding:5em;
     background-color:transparent;
-    /* background:linear-gradient(to bottom,transparent,#039475 90%); */
 }
 .answerbtn:nth-of-type(2n){
     border-left:calc(var(--borderWidth) / 2) solid var(--textColor);
@@ -27,8 +26,8 @@
     margin-right:2em;
 }
 .answerbtn>label{
-    font-family:var(--majorFont);
-    font-weight:400;
+    font-family:var(--minorFont);
+    font-weight:700;
     font-size:4em;
     text-transform:uppercase;
     color:var(--textColor);
