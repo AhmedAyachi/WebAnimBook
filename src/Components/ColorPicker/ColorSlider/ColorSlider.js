@@ -1,4 +1,4 @@
-import {useId,View,DraggableView} from "cherries";
+import {useId,View,DraggableView} from "vritra";
 import css from "./ColorSlider.module.css";
 
 

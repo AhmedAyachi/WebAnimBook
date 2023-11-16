@@ -1,10 +1,15 @@
-import {useId,View,map,fadeIn,groupBy} from "cherries";
+import {useId,DraggableView,map,fadeIn,groupBy} from "vritra";
 import css from "./QuestionView.module.css";
 
 
 export default function QuestionView(props){
     const {parent,id=useId("questionview"),question:{text,keyword}}=props;
-    const questionview=View({parent,id,tag:"p",className:css.questionview}),state={
+    const questionview=DraggableView({
+        parent,id,tag:"p",
+        className:css.questionview,
+        horizontalDrag:false,
+        verticalDrag:false,
+    }),state={
         keywords:keyword.split(" "),
     },{keywords}=state;
 
@@ -48,10 +53,17 @@ export default function QuestionView(props){
     const letterEls=questionview.querySelectorAll(`.${css.word}>span`);
     letterEls.forEach(letterEl=>{
         setTimeout(()=>{
-            letterEl.style.transition=`ease-out ${statics.transDuration+Math.random()*statics.transDuration}ms`;
-            letterEl.style.transform=`translateY(0)`;
+            const duration=statics.transDuration+Math.random()*statics.transDuration;
+            Object.assign(letterEl.style,{
+                transition:`ease-out ${duration}ms`,
+                transform:`translateY(0)`,
+            });
+            setTimeout(()=>{letterEl.style.transition=null},duration);
         },0);
     });
+
+    questionview.getKeywordEls=()=>keywordEls;
+    questionview.getLetterEls=()=>letterEls;
 
     return questionview;
 }

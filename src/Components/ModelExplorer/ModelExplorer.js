@@ -1,4 +1,4 @@
-import {useId,View,fadeOut, fadeIn} from "cherries";
+import {useId,View,fadeOut, fadeIn} from "vritra";
 import css from "./ModelExplorer.module.css";
 import ModelSwiper from "./ModelSwiper/ModelSwiper";
 import ModelElector from "./ModelElector/ModelElector";

@@ -1,4 +1,4 @@
-import {useId,View,map} from "cherries";
+import {useId,View,map} from "vritra";
 import css from "./SocialView.module.css";
 import {facebook0,snapchat0,instagram0} from "assets";
 

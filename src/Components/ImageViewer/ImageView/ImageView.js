@@ -1,4 +1,4 @@
-import {useId,View,useZoomGesture} from "cherries";
+import {useId,View,useZoomGesture} from "vritra";
 import css from "./ImageView.module.css";
 
 

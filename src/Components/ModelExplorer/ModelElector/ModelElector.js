@@ -1,4 +1,4 @@
-import {useId,View,fadeIn,fadeOut} from "cherries";
+import {useId,View,fadeIn,fadeOut} from "vritra";
 import css from "./ModelElector.module.css";
 import ChoiceView from "./ChoiceView/ChoiceView";
 import SocialView  from "./SocialView/SocialView";

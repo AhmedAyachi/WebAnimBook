@@ -1,4 +1,4 @@
-import {useId,View,fadeIn,fadeOut} from "cherries";
+import {useId,View,fadeIn,fadeOut} from "vritra";
 import css from "./StateView.module.css";
 import {check0,cross0} from "assets";
 

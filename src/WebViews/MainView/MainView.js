@@ -1,4 +1,4 @@
-import {View,DrawerNavigator} from "cherries";
+import {View,DrawerNavigator} from "vritra";
 import css from "./MainView.module.css";
 import {ComponentScreen,AboutScreen,HomeScreen} from "screens";
 import * as components from "components";
@@ -10,7 +10,6 @@ export default function MainView(props){
 
     mainview.innateHTML=`
     `;
-
     DrawerNavigator({
         parent:mainview,
         headerClassName:css.header,
@@ -29,6 +28,6 @@ export default function MainView(props){
             {id:"about",component:AboutScreen},
         ],
     });
-    
+
     return mainview;
 }

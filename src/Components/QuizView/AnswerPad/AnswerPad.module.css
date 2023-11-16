@@ -13,7 +13,12 @@
     justify-content:center;
     align-items:center;
     padding:5em;
+    color:var(--textColor);
     background-color:transparent;
+}
+.answerbtn[clicked]{
+    color:var(--backgroundColor);
+    background-color:var(--textColor);
 }
 .answerbtn:nth-of-type(2n){
     border-left:calc(var(--borderWidth) / 2) solid var(--textColor);
@@ -30,5 +35,5 @@
     font-weight:700;
     font-size:4em;
     text-transform:uppercase;
-    color:var(--textColor);
+    color:inherit;
 }

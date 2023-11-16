@@ -6,16 +6,27 @@
     justify-content:flex-start;
     align-items:stretch;
     padding:0 5em;
-    background:linear-gradient(to bottom right,var(--minorColor), var(--mainColor) 90%);
+    background:linear-gradient(to bottom right,var(--minorColor) 2.5%, var(--mainColor) 90%);
     --mainColor:#039475;
     --majorColor:#2adbc7;
     --minorColor:#000606;
 }
-.questionlist{
+.container{
+    max-width:100%;
     flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 .footer{
     max-width:100%;
     font-size:1em;
     padding-bottom:20em;
+}
+
+@keyframes rotate {
+    to{
+        rotate:-360deg;
+    }
 }

@@ -1,46 +1,29 @@
 {
-  "name": "appname",
-  "version": "1.0.0",
-  "description": "cordova app template",
-  "scripts": {
-    "start": "webpack --config webpack.config.js --watch --env env=dev",
-    "test": "webpack --config webpack.config.js --watch --env env=test",
-    "build": "webpack --config webpack.config.js --env env=prod",
-    "server": "phonegap serve"
-  },
-  "author": "Ahmed Ayachi",
-  "license": "ISC",
-  "devDependencies": {
-    "copy-webpack-plugin": "^11.0.0",
-    "cordova-browser": "^7.0.0",
-    "cordova-plugin-add-swift-support": "^2.0.2",
-    "cordova-plugin-appminimize": "^1.0.1",
-    "cordova-plugin-clipboard": "^1.0.0",
-    "cordova-plugin-ionic-keyboard": "^2.2.0",
-    "cordova-plugin-statusbar": "^2.4.3",
-    "cordova-plugin-webview": "github:AhmedAyachi/cordova-plugin-webview",
-    "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.1",
-    "style-loader": "^3.3.1",
-    "terser-webpack-plugin": "^5.3.5",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
-  },
-  "dependencies": {
-    "cherries": "github:AhmedAyachi/Cherries"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-clipboard": {},
-      "cordova-plugin-appminimize": {},
-      "cordova-plugin-webview": {},
-      "cordova-plugin-add-swift-support": {}
+    "name": "webanimbook",
+    "version": "0.0.1",
+    "description": "Vanillajs animations book",
+    "scripts": {
+        "start": "vritra-scripts start",
+        "build": "vritra-scripts build",
+        "watch": "vritra-scripts watch",
+        "extract": "vritra-scripts extract"
     },
-    "platforms": [
-      "browser"
-    ]
-  }
+    "devDependencies": {
+        "cordova-browser": "^7.0.0",
+        "cordova-plugin-ionic-keyboard": "^2.2.0",
+        "cordova-plugin-statusbar": "^3.0.0",
+        "vritra-plugin-webview": "^1.0.0",
+        "vritra-scripts": "^1.0.0"
+    },
+    "dependencies": {
+        "vritra": "^1.0.1"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-ionic-keyboard": {},
+            "vritra-plugin-webview": {}
+        },
+        "platforms": []
+    }
 }

@@ -31,8 +31,8 @@ document.addEventListener("deviceready",onDeviceReady,false);
     const style=getComputedStyle(document.documentElement);
     [
         "mainFont","majorFont","minorFont",
-        "mainColor","majorColor","minorColor","backgroundColor",
-        "textColor",
+        "mainColor","majorColor","minorColor",
+        "textColor","backgroundColor",
     ].forEach(name=>{
         Object.defineProperty(window,name,{
             value:style.getPropertyValue(`--${name}`),

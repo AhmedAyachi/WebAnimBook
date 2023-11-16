@@ -1,4 +1,4 @@
-import {useId,View} from "cherries";
+import {useId,View} from "vritra";
 import css from "./KmAwayView.module.css";
 import {paperplane0} from "assets";
 

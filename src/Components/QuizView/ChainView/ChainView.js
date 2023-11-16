@@ -1,4 +1,4 @@
-import {useId,View,map} from "cherries";
+import {useId,View,map} from "vritra";
 import css from "./ChainView.module.css";
 
 
@@ -10,6 +10,8 @@ export default function ChainView(props){
         ${map(length,()=>`<div class="${css.node}"></div>`)}
         <div class="${css.branch}"></div>
     `;
+
+    chainview.getNodeAtIndex=(i)=>chainview.querySelector(`.${css.node}:nth-of-type(${i+1})`);
 
     return chainview;
 }

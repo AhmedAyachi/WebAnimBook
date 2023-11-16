@@ -1,4 +1,4 @@
-import {useId,map} from "cherries";
+import {useId,map} from "vritra";
 import ScreenView from "../ScreenView/ScreenView";
 import css from "./AboutScreen.module.css";
 import {cordova,svgrepo,tabler,phone0,linkedin0,mail0,appicon} from "assets";

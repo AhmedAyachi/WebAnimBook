@@ -1,4 +1,4 @@
-import {useId,FlatList,PopupView} from "cherries";
+import {useId,FlatList,PopupView} from "vritra";
 import css from "./Navigator.module.css";
 import ImageView from "../ImageView/ImageView";
 

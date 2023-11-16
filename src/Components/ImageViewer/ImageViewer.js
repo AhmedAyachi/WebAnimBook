@@ -1,4 +1,4 @@
-import {useId,FlatList,useSwipeGesture,fadeIn} from "cherries";
+import {useId,FlatList,useSwipeGesture,fadeIn} from "vritra";
 import css from "./ImageViewer.module.css";
 import ImageView from "./ImageView/ImageView";
 import Navigator from "./Navigator/Navigator";

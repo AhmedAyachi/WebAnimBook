@@ -1,4 +1,4 @@
-import {useId,DraggableView,useSwipeGesture} from "cherries";
+import {useId,DraggableView,useSwipeGesture} from "vritra";
 import css from "./ModelView.module.css";
 import StateView from "./StateView/StateView";
 
