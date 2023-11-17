@@ -11,7 +11,7 @@ export {default as tabler} from "./Svgs/Tabler.svg";
 export {default as phone0} from "./Svgs/Phone_0";
 export {default as linkedin0} from "./Svgs/LinkedIn_0";
 export {default as mail0} from "./Svgs/Mail_0";
-export {default as appicon} from "./Svgs/AppIcon.svg";
+export {default as appicon} from "./Svgs/AppIcon";
 export {default as paperplane0} from "./Svgs/Paperplane_0";
 export {default as facebook0} from "./Svgs/Facebook_0";
 export {default as instagram0} from "./Svgs/Instagram_0";

@@ -9,6 +9,7 @@
         "extract": "vritra-scripts extract"
     },
     "devDependencies": {
+        "cordova-android": "^10.1.2",
         "cordova-browser": "^7.0.0",
         "cordova-plugin-ionic-keyboard": "^2.2.0",
         "cordova-plugin-statusbar": "^3.0.0",
@@ -24,6 +25,9 @@
             "cordova-plugin-ionic-keyboard": {},
             "vritra-plugin-webview": {}
         },
-        "platforms": []
+        "platforms": [
+            "browser",
+            "android"
+        ]
     }
 }
