@@ -23,7 +23,7 @@
 .title{
     font-family:var(--mainFont);
     font-weight:700;
-    font-size:8em;
+    font-size:7em;
     white-space:nowrap;
     text-transform:capitalize;
     color:white;
@@ -31,7 +31,7 @@
 }
 .description{
     font-family:arial;
-    font-size:4em;
+    font-size:3.5em;
     line-height:1.5em;
     color:rgba(255,255,255,0.5);
     transition:var(--transition);

@@ -10,7 +10,13 @@ export default function ModelView(props){
         style:styles.modelview(model.photo)+";"+(style||""),
         className:css.modelview,
         boundary:{ymin:-10*rem,ymax:10*rem},
-        onMove,onDrop,
+        onDrag:()=>{
+            modelview.style.transition="0ms";
+        },onMove,
+        onDrop:(...args)=>{
+            modelview.style.transition=null;
+            onDrop(args);
+        },
     }),state={
         stateview:null,
         accepted:null,
@@ -128,5 +134,6 @@ const statics={
 },styles={
     modelview:(photo)=>`
         background-image:url(${photo});
+        transition:${statics.slideduration}ms;
     `,
 }
