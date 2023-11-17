@@ -97,65 +97,20 @@ const statics={
 }
 
 const validateQuestionView=(questionview,chainview,index)=>{
-    const {offsetWidth,offsetHeight}=questionview;
-    const ratio=offsetWidth/offsetHeight;//scaleX*offsetWidth=scaleY*offsetHeight
-    const scaleX=0.4,scaleY=scaleX*ratio;
-    withSequence(questionview,[
-        ...[0.95,1.05,1].map((scale,i)=>({
-            toStyle:{transform:`scale(${scale})`,opacity:i?1:0,overflow:"hidden"},
-            easing:i?"ease":"linear",
-            duration:100,
-        })),
-        /* {
-            toStyle:{
-                transform:`scale(${scaleX},${scaleY}) rotateZ(-360deg)`,
-                borderRadius:"50%",
-            },
-            delay:100,duration:1000,
-        }, */
-    ],()=>{
-        setTimeout(()=>{
-            const duration=1000;
-            const transition=`linear ${duration}ms`;
-            Object.assign(questionview.style,{
-                transform:`scale(${scaleX},${scaleY})`,// rotateZ(-360deg)
-                borderRadius:"50%",
-                transition,
-            });
-            const letterEls=questionview.getLetterEls();
-            letterEls.forEach((letterEl,i)=>{
-                Object.assign(letterEl.style,{
-                    transform:`translate(${100*(0.5-Math.random())}%,${100*(0.5-Math.random())}%)`,
-                    //opacity:Math.random()>0.5?0:1,
-                    //transition,
-                });
-            });
-            /* setTimeout(()=>{
-                Object.assign(questionview.style,{
-                    animation:`${css.rotate} infinite ${duration}ms linear normal forwards`,
-                }); 
-            },duration); */
-        },200);
+    withSequence(questionview,[0.95,1.05,1].map((scale,i)=>({
+        toStyle:{transform:`scale(${scale})`,opacity:i?1:0,overflow:"hidden"},
+        easing:i?"ease":"linear",
+        duration:200,
+    })),()=>{
         
-        keywordEls.forEach(keywordEl=>{
-            keywordEl.style.color=textColor;
-            keywordEl.style.backgroundColor="transparent";
-        });
-        /* const node=chainview.getNodeAtIndex(index);
-        const {x,y}=node.getBoundingClientRect();
-        const {left,top}=questionview.getBoundingClientRect();
-        const moveduration=1000;
-        questionview.setPosition({
-            x:x-left,
-            y:y-top,
-            duration:moveduration,
-            easing:"ease-out",
-        }); */
-        /* questionview.style.background="var(--majorColor)"; */
-
     });
     const keywordEls=questionview.getKeywordEls();
     keywordEls.forEach(keywordEl=>{
-        keywordEl.style.backgroundColor="var(--majorColor)";
+        withSequence(keywordEl,[
+            {
+                toStyle:{backgroundColor:"var(--minorColor)",color:"var(--textColor)"},
+                duration:200,
+            },
+        ]);
     });
 }

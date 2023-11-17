@@ -6,10 +6,7 @@
     justify-content:flex-start;
     align-items:stretch;
     padding:0 5em;
-    background:linear-gradient(to bottom right,var(--minorColor) 2.5%, var(--mainColor) 90%);
-    --mainColor:#039475;
-    --majorColor:#2adbc7;
-    --minorColor:#000606;
+    background:linear-gradient(to bottom right,var(--mainColor) 2.5%, var(--majorColor) 90%);
 }
 .container{
     max-width:100%;
