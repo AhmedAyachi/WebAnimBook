@@ -2,32 +2,11 @@
     position:relative;
     max-width:100%;
     flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:stretch;
     padding:5em;
     background-color:var(--backgroundColor);
     overflow:hidden;
-}
-.header{
-    position:relative;
-    max-width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    opacity:0.85;
-    z-index:10;
-}
-.icon{
-    position:absolute;
-    width:10em;
-    left:0;
-    top:0;bottom:0;margin:auto 0;
-    opacity:0.75;
-}
-.title{
-    height:1em;
-    font-family:var(--majorFont);
-    font-size:11em;
-    font-weight:400;
-    text-transform:uppercase;
-    color:white;
-    translate:0 -0.3em;
 }

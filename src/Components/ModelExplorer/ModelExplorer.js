@@ -2,7 +2,7 @@ import {useId,View,fadeOut, fadeIn} from "vritra";
 import css from "./ModelExplorer.module.css";
 import ModelSwiper from "./ModelSwiper/ModelSwiper";
 import ModelElector from "./ModelElector/ModelElector";
-import {model0,model1,model2,list0} from "assets";
+import {model0,model1,model2} from "assets";
 
 
 export default function ModelExplorer(props){
@@ -10,10 +10,6 @@ export default function ModelExplorer(props){
     const modelexplorer=View({parent,id,className:css.modelexplorer});
 
     modelexplorer.innateHTML=`
-        <div class="${css.header}">
-            <img class="${css.icon}" src="${list0("white")}"/>
-            <span class="${css.title}">zick</span>
-        </div>
     `;
     ModelSwiper({
         parent:modelexplorer,
