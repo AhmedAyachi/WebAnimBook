@@ -1,4 +1,4 @@
-import {useId,View} from "vritra";
+import {useId,View,fadeIn} from "vritra";
 import css from "./ModelSwiper.module.css";
 import ModelView from "./ModelView/ModelView";
 
@@ -12,13 +12,13 @@ export default function ModelSwiper(props){
     modelswiper.innateHTML=`
     `;
 
-    function addModel(model){
+    function addModel(model,fadeDuration){
         models.unshift(model);
         model.element=ModelView({
             parent:modelswiper,model,
             onDealt:onChange&&(()=>{
                 models.pop();
-                addModel(model);
+                addModel(model,1000);
                 const index=models.indexOf(model);
                 onChange(models[index+1]);
             }),
@@ -29,8 +29,9 @@ export default function ModelSwiper(props){
             const itolast=i;
             Object.assign(element.style,styles.modelview(itolast));
         });
+        fadeDuration&&fadeIn(model.element,fadeDuration);
     }
-    props.models?.forEach(addModel);
+    props.models?.forEach(model=>{addModel(model)});
     
 
     return modelswiper;
