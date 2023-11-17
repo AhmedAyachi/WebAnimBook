@@ -1,6 +1,6 @@
 import {useId,View,fadeIn} from "vritra";
 import css from "./ModelSwiper.module.css";
-import ModelView from "./ModelView/ModelView";
+import ModelCard from "./ModelCard/ModelCard";
 
 
 export default function ModelSwiper(props){
@@ -11,10 +11,18 @@ export default function ModelSwiper(props){
 
     modelswiper.innateHTML=`
     `;
-
+    
+    setTimeout(()=>{
+        let {width,height}=modelswiper.getBoundingClientRect();
+        width=100*width/window.innerWidth;
+        height=100*height/window.innerWidth;
+        modelswiper.style.setProperty("--cardWidth",width+"rem");
+        modelswiper.style.setProperty("--cardHeight",height+"rem");
+        props.models?.forEach(model=>{addModel(model)});
+    },0);
     function addModel(model,fadeDuration){
         models.unshift(model);
-        model.element=ModelView({
+        model.element=ModelCard({
             parent:modelswiper,model,
             onDealt:onChange&&(()=>{
                 models.pop();
@@ -27,18 +35,16 @@ export default function ModelSwiper(props){
         });
         models.forEach(({element},i)=>{
             const itolast=i;
-            Object.assign(element.style,styles.modelview(itolast));
+            Object.assign(element.style,styles.modelcard(itolast));
         });
         fadeDuration&&fadeIn(model.element,fadeDuration);
     }
-    props.models?.forEach(model=>{addModel(model)});
-    
 
     return modelswiper;
 }
 
 const styles={
-    modelview:(itolast)=>({
+    modelcard:(itolast)=>({
         left:`${itolast*3}em`,
         zIndex:itolast,
     }),
