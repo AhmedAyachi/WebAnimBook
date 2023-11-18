@@ -2,8 +2,8 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:gap="http://phonegap.com/ns/1.0"
     id="com.webanimbook.app" android-packageName="com.webanimbook.app" version="1.0.0" 
 >
-    <name>Vritra Examples</name>
-    <description>source code of some examples of vritra components</description>
+    <name>WebAnimBook</name>
+    <description>Vanillajs animations book</description>
     <author email="aayachi032@gmail.com">Ahmed Ayachi</author>
     <content src="index.html"/>
     <access origin="file://*"/>
