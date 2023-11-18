@@ -11,8 +11,10 @@
     "devDependencies": {
         "cordova-android": "^10.1.2",
         "cordova-browser": "^7.0.0",
+        "cordova-ios": "^7.0.1",
         "cordova-plugin-ionic-keyboard": "^2.2.0",
         "cordova-plugin-statusbar": "^3.0.0",
+        "vritra-plugin-swift-support": "github:AhmedAyachi/vritra-plugin-swift-support",
         "vritra-plugin-webview": "^1.0.0",
         "vritra-scripts": "^1.0.0"
     },
@@ -27,7 +29,8 @@
         },
         "platforms": [
             "browser",
-            "android"
+            "android",
+            "ios"
         ]
     }
 }

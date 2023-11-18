@@ -1,7 +1,9 @@
 .modelswiper{
     max-width:100%;
-    height:100em;
+    flex:1;
     overflow:visible;
     margin-top:var(--marginTop);
     --marginTop:10em;
+    --cardWidth:85em;
+    --cardHeight:60em;
 }
