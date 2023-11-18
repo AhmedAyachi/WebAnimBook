@@ -9,7 +9,7 @@
     <path
         android:name="path"
         android:pathData="M 0 0 L 3500 0 L 3500 7579 L 0 7579 Z"
-        android:fillColor="#1f1a2e"
+        android:fillColor="@color/backgroundColor"
         android:strokeWidth="0"
     />
     <group
