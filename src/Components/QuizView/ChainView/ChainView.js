@@ -11,7 +11,12 @@ export default function ChainView(props){
         <div class="${css.branch}"></div>
     `;
 
-    chainview.getNodeAtIndex=(i)=>chainview.querySelector(`.${css.node}:nth-of-type(${i+1})`);
+    chainview.updateNodeAtIndex=(index,correct)=>{
+        const node=chainview.querySelector(`.${css.node}:nth-of-type(${index+1})`);
+        if(node){
+            node.style.backgroundColor=correct?"var(--correctColor)":"var(--wrongColor)";
+        }
+    }
 
     return chainview;
 }

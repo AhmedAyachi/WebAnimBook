@@ -1,0 +1,31 @@
+.scoreview{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+    inset:0;
+    margin:auto;
+    background-color:rgba(0,0,0,0.75);
+    z-index:10;
+}
+.result{
+    font-family:var(--minorFont);
+    font-size:20em;
+    color:var(--textColor);
+}
+.againbtn{
+    font-family:var(--minorFont);
+    font-size:5em;
+    text-transform:capitalize;
+    color:var(--textColor);
+    width:85%;
+    padding:0.75em 0;
+    border-radius:0.5em;
+    background:linear-gradient(to bottom right,var(--mainColor) 0%,var(--majorColor));
+}
+.topscore{
+    color:var(--mainColor);
+}

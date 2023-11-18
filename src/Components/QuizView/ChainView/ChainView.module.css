@@ -11,9 +11,15 @@
     width:4em;
     height:4em;
     border-radius:50%;
-    border:0.5em solid var(--backgroundColor);
-    background-color:var(--textColor);
+    border:0.5em solid var(--textColor);
     z-index:2;
+    transition:300ms;
+}
+.node:nth-of-type(2n){
+    background-color:var(--majorColor);
+}
+.node:nth-of-type(2n+1){
+    background-color:var(--mainColor);
 }
 .branch{
     position:absolute;

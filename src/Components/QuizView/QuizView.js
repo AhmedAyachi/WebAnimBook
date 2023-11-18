@@ -1,53 +1,125 @@
-import {fadeOut, useId,View,withSequence} from "vritra";
+import {View,FlatList,withSequence,randomItem,removeItem, fadeOut, fadeIn} from "vritra";
 import css from "./QuizView.module.css";
 import QuestionView from "./QuestionView/QuestionView";
 import ChainView from "./ChainView/ChainView";
 import AnswerPad from "./AnswerPad/AnswerPad";
+import ScoreView from "./ScoreView/ScoreView";
 
 
 export default function QuizView(props){
-    const {parent,id=useId("quizview")}=props;
-    const quizview=View({parent,id,className:css.quizview}),state={
+    const {parent}=props;
+    let quizview=View({parent,className:css.quizview});const state={
         index:0,
-        questionview:null,
-    };
+        questions:randomQuestions(10),
+        questionviews:[],
+        score:0,
+    },{questions}=state;
 
     quizview.innateHTML=`
-        <div class="${css.container}"></div>
-        <div class="${css.footer}"></div>
+        <p class="${css.question}">is the highlighted expression correct ?</p>
+        <div ref="footerEl" class="${css.footer}"></div>
     `;
-    
-    const footerEl=quizview.querySelector(`.${css.footer}`);
+    const {footerEl}=quizview;
+    const flatlist=FlatList({
+        parent:quizview,
+        className:css.flatlist,
+        containerClassName:css.container,
+        horizontal:true,
+        pagingEnabled:true,
+        scrollEnabled:false,
+        data:questions,//[questions[0]],
+        renderItem:({parent,item})=>{
+            const questionview=QuestionView({parent,question:item});
+            state.questionviews.push(questionview);
+            return questionview;
+        },
+    }).adjacentTo(footerEl,true);
+
     const chainview=ChainView({
         parent:footerEl,
-        length:statics.questions.length,
+        length:questions.length,
     });
-    AnswerPad({
+    const answerpad=AnswerPad({
         parent:footerEl,
         onAnswer:(valid)=>{
-            const {questionview,index}=state;
-            const question=statics.questions[state.index];
-            if(valid===question.valid){
-                validateQuestionView(questionview,chainview,index);
-            }
+            const {index}=state;
+            const questionview=state.questionviews[index];
+            const question=questions[index];
+            const correct=valid===question.valid;
+            if(correct){state.score++};
+            validateQuestionView(questionview,correct,()=>{
+                chainview.updateNodeAtIndex(index,correct);
+                state.index++;
+                //flatlist.addItems([questions[state.index]]);
+                flatlist.scrollToIndex(state.index);
+                if(index<(questions.length-1)){
+                    answerpad.reset();
+                }
+                else{
+                    setTimeout(()=>{
+                        ScoreView({
+                            parent:quizview,
+                            score:state.score,
+                            outof:questions.length,
+                        });
+                    },350);
+                }
+            });
         }
     });
 
-    quizview.loadQuestion=()=>{
-        const {questionview}=state;
-        questionview&&questionview.remove();
-        state.questionview=QuestionView({
-            parent:quizview.querySelector(`.${css.container}`),
-            question:statics.questions[state.index],
+
+    quizview.restart=()=>{
+        fadeOut(quizview,()=>{
+            quizview=quizview.substitute(fadeIn(QuizView(props)));
         });
     }
-    quizview.loadQuestion();
 
     return quizview;
 }
 
 const statics={
     questions:[
+        {
+            text:"in other words, she is a great fit for the job",
+            keyword:"in",
+            valid:true, 
+        },
+        {
+            text:"ancient Rome's Colosseum was capable to holding at least 50,000 spectators",
+            keyword:"to",
+            valid:false,
+        },
+        {
+            text:"Steffi Graf is in the Hall of Fame because she was a great tennis player",
+            keyword:"great",
+            valid:true,
+        },
+        {
+            text:"alex asked Jadan where she wanted to go for dinner",
+            keyword:"where",
+            valid:true,
+        },
+        {
+            text:"he told me to bring either lunch nor money for the cafe",
+            keyword:"nor",
+            valid:false,
+        },
+        {
+            text:"chance was grateful for the homework help his sister gave him",
+            keyword:"grateful",
+            valid:true,
+        },
+        {
+            text:"apples are better than oranges",
+            keyword:"better",
+            valid:true,
+        },
+        {
+            text:"he slow swarm across the pool",
+            keyword:"slow",
+            valid:false,
+        },
         {
             text:"deciding it was better late than never, Julia Child enrolled in culinary school at age 37",
             keyword:"better late than never",
@@ -96,20 +168,33 @@ const statics={
     ],
 }
 
-const validateQuestionView=(questionview,chainview,index)=>{
+const randomQuestions=(count=5)=>{
+    const questions=[...statics.questions];
+    while(questions.length>count){
+        removeItem(questions,randomItem(questions));
+    }
+    return questions;
+};
+
+const validateQuestionView=(questionview,correct,callback)=>{
     withSequence(questionview,[0.95,1.05,1].map((scale,i)=>({
-        toStyle:{transform:`scale(${scale})`,opacity:i?1:0,overflow:"hidden"},
+        toStyle:{
+            transform:`scale(${scale})`,
+            opacity:i?1:0,
+            overflow:"hidden",
+        },
         easing:i?"ease":"linear",
-        duration:200,
-    })),()=>{
-        
-    });
+        duration:150,
+    })),callback);
     const keywordEls=questionview.getKeywordEls();
     keywordEls.forEach(keywordEl=>{
         withSequence(keywordEl,[
             {
-                toStyle:{backgroundColor:"var(--minorColor)",color:"var(--textColor)"},
-                duration:200,
+                toStyle:{
+                    backgroundColor:correct?"var(--correctColor)":"var(--wrongColor)",
+                    color:"var(--textColor)"
+                },
+                duration:150,
             },
         ]);
     });

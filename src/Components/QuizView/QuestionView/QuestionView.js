@@ -63,7 +63,6 @@ export default function QuestionView(props){
     });
 
     questionview.getKeywordEls=()=>keywordEls;
-    questionview.getLetterEls=()=>letterEls;
 
     return questionview;
 }
