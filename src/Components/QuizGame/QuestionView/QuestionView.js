@@ -50,19 +50,22 @@ export default function QuestionView(props){
             });
         });
     },statics.transDuration/2);
-    const letterEls=questionview.querySelectorAll(`.${css.word}>span`);
-    letterEls.forEach(letterEl=>{
-        setTimeout(()=>{
-            const duration=statics.transDuration+Math.random()*statics.transDuration;
-            Object.assign(letterEl.style,{
-                transition:`ease-out ${duration}ms`,
-                transform:`translateY(0)`,
-            });
-            setTimeout(()=>{letterEl.style.transition=null},duration);
-        },0);
-    });
+
 
     questionview.getKeywordEls=()=>keywordEls;
+    questionview.reveal=()=>{
+        const letterEls=questionview.querySelectorAll(`.${css.word}>span`);
+        letterEls.forEach(letterEl=>{
+            setTimeout(()=>{
+                const duration=statics.transDuration+Math.random()*statics.transDuration;
+                Object.assign(letterEl.style,{
+                    transition:`ease-out ${duration}ms`,
+                    transform:`translateY(0)`,
+                });
+                setTimeout(()=>{letterEl.style.transition=null},duration);
+            },0);
+        });
+    }
 
     return questionview;
 }

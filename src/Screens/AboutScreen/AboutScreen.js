@@ -13,7 +13,7 @@ export default function AboutScreen(props){
             <img class="${css.appicon}" src="${appicon(textColor)}"/>
             <h3 class="${css.title}">
                 <span>WebAnimBook</span> 
-                <span class="${css.version}">v1.0.0</span>
+                <!--<span class="${css.version}">v1.0.0</span>-->
             </h3>
         </div>
         <div class="${css.about}">

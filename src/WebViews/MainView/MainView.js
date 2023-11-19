@@ -15,7 +15,7 @@ export default function MainView(props){
         headerClassName:css.header,
         containerClassName:css.container,
         tintColor:majorColor,
-        initialId:"QuizView",
+        initialId:"home",
         routes:[
             {id:"home",component:HomeScreen},
             ...Object.keys(components).map(key=>({

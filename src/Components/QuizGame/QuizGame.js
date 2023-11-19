@@ -1,36 +1,37 @@
 import {View,FlatList,withSequence,randomItem,removeItem, fadeOut, fadeIn} from "vritra";
-import css from "./QuizView.module.css";
+import css from "./QuizGame.module.css";
 import QuestionView from "./QuestionView/QuestionView";
 import ChainView from "./ChainView/ChainView";
 import AnswerPad from "./AnswerPad/AnswerPad";
 import ScoreView from "./ScoreView/ScoreView";
 
 
-export default function QuizView(props){
+export default function QuizGame(props){
     const {parent}=props;
-    let quizview=View({parent,className:css.quizview});const state={
+    let quizgame=View({parent,className:css.quizgame});const state={
         index:0,
         questions:randomQuestions(10),
         questionviews:[],
         score:0,
     },{questions}=state;
 
-    quizview.innateHTML=`
+    quizgame.innateHTML=`
         <p class="${css.question}">is the highlighted expression correct ?</p>
         <div ref="footerEl" class="${css.footer}"></div>
     `;
-    const {footerEl}=quizview;
+    const {footerEl}=quizgame;
     const flatlist=FlatList({
-        parent:quizview,
+        parent:quizgame,
         className:css.flatlist,
         containerClassName:css.container,
         horizontal:true,
         pagingEnabled:true,
         scrollEnabled:false,
         data:questions,//[questions[0]],
-        renderItem:({parent,item})=>{
+        renderItem:({parent,item,index})=>{
             const questionview=QuestionView({parent,question:item});
             state.questionviews.push(questionview);
+            if(!index){questionview.reveal()};
             return questionview;
         },
     }).adjacentTo(footerEl,true);
@@ -52,13 +53,12 @@ export default function QuizView(props){
                 state.index++;
                 //flatlist.addItems([questions[state.index]]);
                 flatlist.scrollToIndex(state.index);
-                if(index<(questions.length-1)){
-                    answerpad.reset();
-                }
+                state.questionviews[state.index]?.reveal();
+                if(index<(questions.length-1)){answerpad.reset()}
                 else{
                     setTimeout(()=>{
                         ScoreView({
-                            parent:quizview,
+                            parent:quizgame,
                             score:state.score,
                             outof:questions.length,
                         });
@@ -69,13 +69,13 @@ export default function QuizView(props){
     });
 
 
-    quizview.restart=()=>{
-        fadeOut(quizview,()=>{
-            quizview=quizview.substitute(fadeIn(QuizView(props)));
+    quizgame.restart=()=>{
+        fadeOut(quizgame,()=>{
+            quizgame=quizgame.substitute(fadeIn(QuizGame(props)));
         });
     }
 
-    return quizview;
+    return quizgame;
 }
 
 const statics={

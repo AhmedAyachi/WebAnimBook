@@ -43,29 +43,29 @@
         <preference name="ShowSplashScreenSpinner" value="false"/>
         <preference name="StatusBarBackgroundColor" value="#1f1a2e"/>
         <preference name="StatusBarStyle" value="lightcontent"/>
-        <!-- <icon src="src/Assets/Icon/Icon_20.png" width="20"/>
-        <icon src="src/Assets/Icon/Icon_29.png" width="29"/> -->
+        <icon src="src/Assets/Icon/Icon_20.png" width="20"/>
+        <icon src="src/Assets/Icon/Icon_29.png" width="29"/>
         <icon src="src/Assets/Icon/Icon_40.png" width="40"/>
-        <!-- <icon src="src/Assets/Icon/Icon_48.png" width="48"/>
+        <icon src="src/Assets/Icon/Icon_48.png" width="48"/>
         <icon src="src/Assets/Icon/Icon_50.png" width="50"/>
         <icon src="src/Assets/Icon/Icon_55.png" width="55"/>
-        <icon src="src/Assets/Icon/Icon_57.png" width="57"/> -->
-        <!-- <icon src="src/Assets/Icon/Icon_58.png" width="58"/>
+        <icon src="src/Assets/Icon/Icon_57.png" width="57"/>
+        <icon src="src/Assets/Icon/Icon_58.png" width="58"/>
         <icon src="src/Assets/Icon/Icon_60.png" width="60"/>
         <icon src="src/Assets/Icon/Icon_72.png" width="72"/>
         <icon src="src/Assets/Icon/Icon_76.png" width="76"/>
         <icon src="src/Assets/Icon/Icon_80.png" width="80"/>
         <icon src="src/Assets/Icon/Icon_87.png" width="87"/>
         <icon src="src/Assets/Icon/Icon_88.png" width="88"/>
-        <icon src="src/Assets/Icon/Icon_100.png" width="100"/> -->
+        <icon src="src/Assets/Icon/Icon_100.png" width="100"/>
         <icon src="src/Assets/Icon/Icon_114.png" width="114"/>
         <icon src="src/Assets/Icon/Icon_120.png" width="120"/>
-        <!-- <icon src="src/Assets/Icon/Icon_144.png" width="144"/>
+        <icon src="src/Assets/Icon/Icon_144.png" width="144"/>
         <icon src="src/Assets/Icon/Icon_152.png" width="152"/>
         <icon src="src/Assets/Icon/Icon_167.png" width="167"/>
-        <icon src="src/Assets/Icon/Icon_172.png" width="172"/> -->
+        <icon src="src/Assets/Icon/Icon_172.png" width="172"/>
         <icon src="src/Assets/Icon/Icon_180.png" width="180"/>
-        <!-- <icon src="src/Assets/Icon/Icon_196.png" width="196"/> -->
+        <icon src="src/Assets/Icon/Icon_196.png" width="196"/>
         <splash src="src/Assets/LaunchScreen/Default@2x~universal~anyany.png"/>
     </platform>
 </widget>
