@@ -5,6 +5,10 @@ import WebViews from "../WebViews";
 
 
 function onDeviceReady(){
+    if(cordova.platformId==="ios"){
+        StatusBar.backgroundColorByHexString(textColor);
+        StatusBar.styleDefault();
+    }
     WebView.defineWebViews(WebViews);
     WebView.initiateStore(store,(store)=>{
         MainView({parent:document.body,store});

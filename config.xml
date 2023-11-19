@@ -14,12 +14,12 @@
     <preference name="android-minSdkVersion" value="26"/>
     <!-- <preference name="android-targetSdkVersion" value=""/> -->
     <!-- <preference name="android-maxSdkVersion" value=""/> -->
-    <preference name="StatusBarStyle" value="default"/>
     <preference name="StatusBarOverlaysWebView" value="false"/>
-    <preference name="StatusBarBackgroundColor" value="#ffffff"/>
     <preference name="BackgroundColor" value="#1f1a2e"/>
 
     <platform name="android">
+        <preference name="StatusBarStyle" value="default"/>
+        <preference name="StatusBarBackgroundColor" value="#ffffff"/>
         <icon 
             background="@color/backgroundColor" 
             foreground="src/Assets/Icon/Icon.xml"
@@ -39,8 +39,10 @@
     <platform name="ios">
         <preference name="UseSwiftLanguageVersion" value="5"/>
         <preference name="UseSwiftLanguageVersion" value="5"/>
-        <preference name="SplashScreenDelay" value="1000"/>
+        <preference name="SplashScreenDelay" value="200"/>
         <preference name="ShowSplashScreenSpinner" value="false"/>
+        <preference name="StatusBarBackgroundColor" value="#1f1a2e"/>
+        <preference name="StatusBarStyle" value="lightcontent"/>
         <icon src="src/Assets/Icon/Icon_20.png" width="20"/>
         <icon src="src/Assets/Icon/Icon_29.png" width="29"/>
         <icon src="src/Assets/Icon/Icon_40.png" width="40"/>
