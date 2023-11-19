@@ -1,7 +1,7 @@
 {
     "name": "webanimbook",
     "version": "0.0.1",
-    "description": "Vanillajs animations book",
+    "description": "web animations book",
     "scripts": {
         "start": "vritra-scripts start",
         "build": "vritra-scripts build",

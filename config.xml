@@ -3,7 +3,7 @@
     id="com.webanimbook.app" android-packageName="com.webanimbook.app" version="1.0.0" 
 >
     <name>WebAnimBook</name>
-    <description>Vanillajs animations book</description>
+    <description>web animations book</description>
     <author email="aayachi032@gmail.com">Ahmed Ayachi</author>
     <content src="index.html"/>
     <access origin="file://*"/>
@@ -32,13 +32,16 @@
         >
             <activity android:theme="@style/MainActivity"/>
         </edit-config>
-        <resource-file src="src/Assets/Xml/MainActivity.xml" target="/app/src/main/res/values/MainActivity.xml"/>
-        <resource-file src="src/Assets/Xml/LaunchScreen.xml" target="/app/src/main/res/drawable/launchscreen.xml"/>
+        <resource-file src="src/Assets/Config/android/MainActivity.xml" target="/app/src/main/res/values/MainActivity.xml"/>
+        <resource-file src="src/Assets/LaunchScreen/LaunchScreen.xml" target="/app/src/main/res/drawable/launchscreen.xml"/>
     </platform>
 
     <platform name="ios">
         <preference name="UseSwiftLanguageVersion" value="5"/>
-        <!-- <icon src="src/Assets/Icon/Icon_20.png" width="20"/>
+        <preference name="UseSwiftLanguageVersion" value="5"/>
+        <preference name="SplashScreenDelay" value="1000"/>
+        <preference name="ShowSplashScreenSpinner" value="false"/>
+        <icon src="src/Assets/Icon/Icon_20.png" width="20"/>
         <icon src="src/Assets/Icon/Icon_29.png" width="29"/>
         <icon src="src/Assets/Icon/Icon_40.png" width="40"/>
         <icon src="src/Assets/Icon/Icon_48.png" width="48"/>
@@ -60,6 +63,7 @@
         <icon src="src/Assets/Icon/Icon_167.png" width="167"/>
         <icon src="src/Assets/Icon/Icon_172.png" width="172"/>
         <icon src="src/Assets/Icon/Icon_180.png" width="180"/>
-        <icon src="src/Assets/Icon/Icon_196.png" width="196"/> -->
+        <icon src="src/Assets/Icon/Icon_196.png" width="196"/>
+        <splash src="src/Assets/LaunchScreen/Default@2x~universal~anyany.png"/>
     </platform>
 </widget>
