@@ -5,6 +5,6 @@ module.exports=[
 ].map((webview,i)=>({
     ...webview,
     id:webview.name.toLowerCase(),
-    backgroundColor:globalThis.backgroundColor,
+    backgroundColor:cordova.platformId==="android"?globalThis.backgroundColor:"red",
     file:`index${i+1}.html`,
 }));

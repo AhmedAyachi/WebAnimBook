@@ -7,7 +7,7 @@
     --padding:5em;
 }
 .homescreen p{
-    color:white;
+    color:var(--textColor);
 }
 .row0{
     max-width:100%;
@@ -33,5 +33,5 @@
 .name{
     font-family:parisienne;
     font-size:2em;
-    color:white;
+    color:var(--textColor);
 }

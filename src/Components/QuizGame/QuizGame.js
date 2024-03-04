@@ -1,4 +1,4 @@
-import {View,FlatList,withSequence,randomItem,removeItem, fadeOut, fadeIn} from "vritra";
+import {View,FlatList,withSequence,randomItem,removeItem,fadeOut,fadeIn} from "vritra";
 import css from "./QuizGame.module.css";
 import QuestionView from "./QuestionView/QuestionView";
 import ChainView from "./ChainView/ChainView";
@@ -51,7 +51,6 @@ export default function QuizGame(props){
             validateQuestionView(questionview,correct,()=>{
                 chainview.updateNodeAtIndex(index,correct);
                 state.index++;
-                //flatlist.addItems([questions[state.index]]);
                 flatlist.scrollToIndex(state.index);
                 state.questionviews[state.index]?.reveal();
                 if(index<(questions.length-1)){answerpad.reset()}
@@ -188,14 +187,12 @@ const validateQuestionView=(questionview,correct,callback)=>{
     })),callback);
     const keywordEls=questionview.getKeywordEls();
     keywordEls.forEach(keywordEl=>{
-        withSequence(keywordEl,[
-            {
-                toStyle:{
-                    backgroundColor:correct?"var(--correctColor)":"var(--wrongColor)",
-                    color:"var(--textColor)"
-                },
-                duration:150,
+        withSequence(keywordEl,[{
+            toStyle:{
+                backgroundColor:correct?"var(--correctColor)":"var(--wrongColor)",
+                color:"var(--textColor)"
             },
-        ]);
+            duration:150,
+        }]);
     });
 }

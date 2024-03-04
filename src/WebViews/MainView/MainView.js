@@ -1,4 +1,4 @@
-import {View,DrawerNavigator} from "vritra";
+import {NativeView,DrawerNavigator} from "vritra";
 import css from "./MainView.module.css";
 import {ComponentScreen,AboutScreen,HomeScreen} from "screens";
 import * as components from "components";
@@ -6,7 +6,7 @@ import * as components from "components";
 
 export default function MainView(props){
     const {parent}=props;
-    const mainview=View({parent,id:"webview",className:css.mainview});
+    const mainview=NativeView({parent,id:"webview",className:css.mainview});
 
     mainview.innateHTML=`
     `;
@@ -15,7 +15,7 @@ export default function MainView(props){
         headerClassName:css.header,
         containerClassName:css.container,
         tintColor:majorColor,
-        initialId:"home",
+        initialId:"AudioPlayer",
         routes:[
             {id:"home",component:HomeScreen},
             ...Object.keys(components).map(key=>({

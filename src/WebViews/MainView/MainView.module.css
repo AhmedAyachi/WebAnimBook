@@ -7,7 +7,7 @@
     font-size:3em;
 }
 .header{
-    background-color:white;
+    background-color:var(--textColor);
 }
 .container{
     background-color:var(--backgroundColor);

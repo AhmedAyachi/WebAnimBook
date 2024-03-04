@@ -1,14 +1,13 @@
-import {useId,DraggableView,useSwipeGesture} from "vritra";
+import {DraggableView,useSwipeGesture} from "vritra";
 import css from "./ModelCard.module.css";
 import StateView from "./StateView/StateView";
 
 
 export default function ModelCard(props){
-    const {parent,id=useId("modelcard"),style,model,onDealt,onFocus,onBlur}=props;
+    const {parent,model,onDealt,onFocus,onBlur}=props;
     const modelcard=DraggableView({
-        parent,id,
-        style:styles.modelcard(model.photo)+";"+(style||""),
-        className:css.modelcard,
+        parent,className:css.modelcard,
+        style:styles.modelcard(model.photo),
         boundary:{ymin:-10*rem,ymax:10*rem},
         onDrag:()=>{
             modelcard.style.transition="0ms";
@@ -34,14 +33,14 @@ export default function ModelCard(props){
             if((!focused)&&(event.direction==="top")){
                 state.focused=true;
                 state.left=style.left;
-                modelcard.setPosition({x:0,y:0,duration:statics.backduration},false);
+                modelcard.setPosition({x:0,y:0,duration:statics.backDuration},false);
                 modelcard.setEventListener("move",()=>{
                     modelcard.setPosition({x:0},false);
                 });
                 modelcard.setEventListener("drop",({dy})=>{
-                    (dy<50)&&modelcard.setPosition({y:0,duration:statics.backduration});
+                    (dy<5*rem)&&modelcard.setPosition({y:0,duration:statics.backDuration});
                 });
-                style.animation=`${css.fullview} ${statics.focusduration}ms ease-in-out 1 normal forwards`;
+                style.animation=`${css.fullview} ${statics.focusDuration}ms ease-in-out 1 normal forwards`;
                 setTimeout(()=>{
                     Object.assign(style,{
                         width:"100%",
@@ -50,14 +49,14 @@ export default function ModelCard(props){
                         top:0,
                         animation:null,
                     });
-                },statics.focusduration+50);
+                },statics.focusDuration+50);
                 onFocus&&onFocus();
             }
             else if(focused&&(event.direction==="bottom")){
                 state.focused=false;
-                modelcard.setPosition({y:0,duration:statics.focusduration},false);
+                modelcard.setPosition({y:0,duration:statics.focusDuration},false);
                 style.left=state.left;
-                style.animation=`${css.fullview} ${statics.focusduration}ms ease-in-out 1 reverse forwards`;
+                style.animation=`${css.fullview} ${statics.focusDuration}ms ease-in-out 1 reverse forwards`;
                 setTimeout(()=>{
                     Object.assign(style,{
                         width:null,
@@ -66,8 +65,8 @@ export default function ModelCard(props){
                         animation:null,
                     });
                     modelcard.setEventListener("move",onMove);
-                    modelcard.setEventListener("drop",onDrop)
-                },statics.focusduration+50);
+                    modelcard.setEventListener("drop",onDrop);
+                },statics.focusDuration+50);
                 onBlur&&onBlur();
             }
         }},
@@ -81,8 +80,8 @@ export default function ModelCard(props){
         if(accepted!==null){
             state.stateview=StateView({parent:modelcard,accepted});
             modelcard.setEventListener("move",({x})=>{
-                let unkown=(x<statics.dismax)&&(x>-statics.dismax);
-                if(unkown){
+                let unknown=(x<statics.dismax)&&(x>-statics.dismax);
+                if(unknown){
                     const {stateview}=state;
                     if(stateview){
                         state.stateview=null;
@@ -102,13 +101,13 @@ export default function ModelCard(props){
             const width=diagonal*Math.cos(rad);
             const offset=(width+(window.innerWidth-modelcard.clientWidth)/2)/rem;
             Object.assign(modelcard.style,{
-                transition:`${statics.slideduration}ms`,
+                transition:`${statics.slideDuration}ms`,
                 transform:`
-                    translateX(${accepted?"":"-"}${offset}rem) 
+                    translateX(${accepted?"":"-"}${offset}em) 
                     rotateZ(${accepted?"-":""}${statics.angle}deg)
                 `,
             });
-            setTimeout(()=>{modelcard.remove()},statics.slideduration+50);
+            setTimeout(()=>{modelcard.remove()},statics.slideDuration+50);
             onDealt&&onDealt();
         }
         else{
@@ -117,7 +116,7 @@ export default function ModelCard(props){
                 stateview.unmount();
             }
             modelcard.setEventListener("move",onMove);
-            modelcard.setPosition({x:0,y:0,duration:statics.backduration});
+            modelcard.setPosition({x:0,y:0,duration:statics.backDuration});
         }
     }
 
@@ -126,14 +125,14 @@ export default function ModelCard(props){
 }
 
 const statics={
-    dismax:10*rem,
+    dismax:12.5*rem,
     angle:45,
-    backduration:300,
-    focusduration:500,
-    slideduration:1000,
+    backDuration:300,
+    focusDuration:500,
+    slideDuration:1000,
 },styles={
     modelcard:(photo)=>`
         background-image:url(${photo});
-        transition:${statics.slideduration}ms;
+        transition:${statics.slideDuration}ms;
     `,
 }

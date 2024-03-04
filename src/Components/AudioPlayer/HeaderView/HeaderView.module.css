@@ -1,0 +1,16 @@
+.headerview{
+    max-width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:5em;
+    background-color:transparent;
+}
+.title{
+    font-size:3em;
+    text-transform:capitalize;
+    color:white;
+}
+.action{
+    width:8em;
+}

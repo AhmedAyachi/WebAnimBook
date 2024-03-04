@@ -1,0 +1,24 @@
+.audioplayer{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+.foreground{
+    position:relative;
+    max-width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:stretch;
+    padding:0 6.5em;
+    z-index:1;
+}
+.posterlist{
+    max-width:100%;
+    flex:1 1 0;
+    margin:3em 0;
+}
+.container{
+    height:100% !important;
+}

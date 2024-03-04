@@ -1,5 +1,6 @@
 
 
+export {default as AudioPlayer} from "./AudioPlayer/AudioPlayer";
 export {default as QuizGame} from "./QuizGame/QuizGame";
 export {default as ModelExplorer} from "./ModelExplorer/ModelExplorer";
 export {default as ColorPicker} from "./ColorPicker/ColorPicker";
