@@ -17,7 +17,6 @@ export default function ModelExplorer(props){
         onChange:(model)=>{
             fadeOut(modelelctor,model&&(()=>{
                 modelelctor=modelelctor.substitute(fadeIn(ModelElector({model})));
-                //fadeIn(modelelctor);
             }));
         },
         onFocus:()=>{modelelctor.toggleMore(true)},
